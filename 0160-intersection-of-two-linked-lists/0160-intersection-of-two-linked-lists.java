@@ -1,30 +1,30 @@
 class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        int ac = 0;
-        int bc = 0;
-        ListNode a = headA;
-        ListNode b = headB;
-        while(a != null){
-            ac++;
-            a = a.next;
+       int lengthA=getLength(headA);
+        int lengthB=getLength(headB);
+        while(lengthA>lengthB){
+            lengthA--;
+            headA=headA.next;
         }
-        while(b != null){
-            bc++;
-            b = b.next;
+        while(lengthB>lengthA){
+            lengthB--;
+            headB=headB.next;
         }
-        while(ac > bc){
-            ac--;
-            headA = headA.next;
-        }
-        while(bc > ac){
-            bc--;
-            headB = headB.next;
-        }
-        
-        while(headA != headB){
-            headA = headA.next;
-            headB = headB.next;
+        while(headA!=headB){
+            headA=headA.next;
+            headB=headB.next;
         }
         return headA;
+
+        
+
+    }
+    public int getLength(ListNode current_node){
+        int length=0;
+        while(current_node!=null){
+            length++;
+            current_node=current_node.next;
+        }
+        return length;
     }
 }
