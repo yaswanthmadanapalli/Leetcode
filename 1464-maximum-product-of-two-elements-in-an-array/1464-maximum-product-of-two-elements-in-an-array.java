@@ -26,9 +26,13 @@ class Solution {
         int[] temp=new int[2];
         int i=0;
         int result1=1;
-        for(int j=0;j<nums.length;j++){
-            result.add(nums[j]);
+        // for(int j=0;j<nums.length;j++){
+        //     result.add(nums[j]);
+        // }
+        for (int num : nums) {
+            result.add(num);
         }
+
         while(i<temp.length){
             temp[i]=result.poll();
             result1=result1*(temp[i]-1);
