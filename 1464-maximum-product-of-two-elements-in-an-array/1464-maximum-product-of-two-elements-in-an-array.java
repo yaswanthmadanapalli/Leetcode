@@ -22,9 +22,9 @@ class Solution {
 
         while(i<temp.length){
             temp[i]=result.poll();
-            //result1=result1*(temp[i]-1);
+            result1=result1*(temp[i]-1);
             i++;
         }
-        return (temp[0]-1)*(temp[1]-1);
+        return result1;
     }
 }
