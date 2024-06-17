@@ -12,7 +12,17 @@ class MyComp implements Comparator<Integer>{
 class Solution {
     
     public int maxProduct(int[] nums) {
-        PriorityQueue<Integer> result=new PriorityQueue<>(new MyComp());
+        PriorityQueue<Integer> result=new PriorityQueue<>(new Comparator<Integer>(){
+            public int compare(Integer o1, Integer o2){
+                if(o1<o2){
+                    return 1;
+                }
+                if(o1>o2){
+                    return -1;
+                }
+                return 0;
+            }
+        });
         int[] temp=new int[2];
         int i=0;
         int result1=1;
