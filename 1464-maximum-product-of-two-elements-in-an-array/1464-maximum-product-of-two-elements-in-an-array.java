@@ -20,11 +20,11 @@ class Solution {
         }
         
 
-        while(i<temp.length){
-            temp[i]=result.poll();
-            result1=result1*(temp[i]-1);
-            i++;
-        }
-        return result1;
+        // while(i<temp.length){
+        //     temp[i]=result.poll();
+        //     result1=result1*(temp[i]-1);
+        //     i++;
+        // }
+        return (result.poll()-1)*(result.poll()-1);
     }
 }
