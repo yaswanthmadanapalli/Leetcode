@@ -1,5 +1,8 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
         HashMap<Character, Integer> hm=new HashMap<>();
 //      When we are trying to use two hashmaps its only beating 20% of the users in java.
         HashMap<Character, Integer> hm1=new HashMap<>();
@@ -21,19 +24,7 @@ class Solution {
                 hm1.put(ch,1);
             }
         }
-        if(hm.size()!=hm1.size()){
-            return false;
-        }
-        // for(int i=0;i<hm.size();i++){
-        //     char ch=hm.get();
-        // }
-        // for(Character key:hm.keySet()){
-        //     if(hm1.containsKey(key)){
-        //         if(hm.get(key).equals(hm1.get(key))){
-        //             return 
-        //         }
-        //     }
-        // }
+        
         for(Character key:hm.keySet()){
             if(!hm1.containsKey(key)){
                 return false;
