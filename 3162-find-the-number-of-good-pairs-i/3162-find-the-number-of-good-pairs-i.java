@@ -8,9 +8,9 @@ class Solution {
         }
         List<Integer> keyList=new ArrayList<>(hm.keySet());
         for(int j=0;j<nums1.length;j++){
-            for(Integer key : hm.keySet()){
-                if(nums1[j]%key==0){
-                    total+=hm.get(key);
+            for(int l=0;l<keyList.size();l++){
+                if(nums1[j]%keyList.get(l)==0){
+                    total+=hm.get(keyList.get(l));
                 }
             }
         }
