@@ -1,10 +1,20 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        String result=s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
+        //String result=s.replaceAll("[^a-zA-Z0-9]","").toLowerCase();
         int leftIndex=0;
-        int rightIndex=result.length()-1;
+        int rightIndex=s.length()-1;
         while(leftIndex<rightIndex){
-            if(result.charAt(leftIndex)!=result.charAt(rightIndex)){
+            while (leftIndex < rightIndex && !Character.isLetterOrDigit(s.charAt(leftIndex))) {
+                leftIndex++;
+            }
+            // Find the next alphanumeric character from the right
+            while (leftIndex < rightIndex && !Character.isLetterOrDigit(s.charAt(rightIndex))) {
+                rightIndex--;
+            }
+            // if(s.toLowerCase.charAt(leftIndex)!=s.toLowerCase.charAt(rightIndex)){
+            //     return false;
+            // }
+            if (Character.toLowerCase(s.charAt(leftIndex)) != Character.toLowerCase(s.charAt(rightIndex))) {
                 return false;
             }
             leftIndex++;
